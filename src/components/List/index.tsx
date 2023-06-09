@@ -8,14 +8,14 @@ function List({ gifs }: Props) {
   return (
     <Container>
       {gifs?.map((item) => {
-        const gifShortHand = item?.images?.original;
+        const image = item?.images?.original;
 
         return (
           <img
-            key={gifShortHand?.url}
+            key={image?.url}
             alt={item?.title}
             width="200px"
-            src={gifShortHand?.url}
+            src={image?.url}
             loading="lazy"
           />
         );

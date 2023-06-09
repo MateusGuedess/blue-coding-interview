@@ -1,26 +1,6 @@
 import React from "react";
 import { Container } from "./style";
-
-interface Props {
-  gifs: GIF[];
-}
-
-interface GIF {
-  id: string;
-  username: string;
-  images: Images;
-  title: string;
-}
-
-interface Images {
-  original: {
-    height: string;
-    size: string;
-    url: string;
-    width: string;
-    mp4: string;
-  };
-}
+import { Props, GIF, Images } from "./types";
 
 function List({ gifs }: Props) {
   if (!gifs) return <></>;

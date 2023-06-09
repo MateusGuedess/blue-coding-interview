@@ -9,6 +9,7 @@ interface GIF {
   id: string;
   username: string;
   images: Images;
+  title: string;
 }
 
 interface Images {
@@ -26,15 +27,19 @@ function List({ gifs }: Props) {
 
   return (
     <Container>
-      {gifs?.map((item) => (
-        <img
-          key={item?.images?.original?.url}
-          alt={item?.images?.original?.url}
-          width="200px"
-          src={item?.images?.original?.url}
-          loading="lazy"
-        />
-      ))}
+      {gifs?.map((item) => {
+        const gifShortHand = item?.images?.original;
+
+        return (
+          <img
+            key={gifShortHand?.url}
+            alt={item?.title}
+            width="200px"
+            src={gifShortHand?.url}
+            loading="lazy"
+          />
+        );
+      })}
     </Container>
   );
 }

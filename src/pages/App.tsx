@@ -36,7 +36,7 @@ function App() {
   }, [data]);
 
   useEffect(() => {
-    setHistory([...history, search]);
+    if (search !== "") setHistory([...history, search]);
     refetch();
   }, [debounceSearchTerm]);
 
